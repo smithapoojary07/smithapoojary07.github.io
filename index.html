@@ -1,298 +1,518 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="My portfolio showcasing four AI projects completed during my DecodeLabs internship.">
-  <title>Smitha Poojary | AI & Python Portfolio</title>
-  <style>
-    :root {
-      --bg: #0b1020;
-      --panel: #131b2f;
-      --text: #edf2ff;
-      --muted: #a4b0ca;
-      --accent: #8b7cff;
-      --border: #26324a;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1080px, 90%); margin: auto; }
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #0b1020ee;
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-    }
-    .nav-inner {
-      min-height: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-    .logo { font-weight: 800; font-size: 1.1rem; }
-    .logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-size: .92rem; }
-    .nav-links a:hover, .text-link:hover { color: #c6beff; }
-    .hero { padding: 100px 0 85px; }
-    .eyebrow {
-      color: #b8aeff;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: .8rem;
-      font-weight: bold;
-    }
-    h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      line-height: 1.08;
-      margin: 20px 0;
-      letter-spacing: -2px;
-    }
-    h1 span {
-      background: linear-gradient(90deg, #a89cff, #6dd8ff);
-      color: transparent;
-      background-clip: text;
-    }
-    .hero p { color: var(--muted); max-width: 660px; font-size: 1.08rem; }
-    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 19px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      font-weight: bold;
-      font-size: .92rem;
-    }
-    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .btn:hover { transform: translateY(-2px); }
-    section { padding: 65px 0; }
-    .section-heading { margin-bottom: 28px; }
-    .section-heading h2 { font-size: 2rem; margin: 5px 0; }
-    .section-heading p { color: var(--muted); margin-top: 0; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      transition: transform .2s, border-color .2s;
-    }
-    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .project-number { color: #a89cff; font-weight: bold; font-size: .85rem; }
-    .card h3 { margin: 10px 0 5px; font-size: 1.25rem; }
-    .card p { color: var(--muted); margin: 8px 0 17px; }
-    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 20px; }
-    .tag {
-      font-size: .78rem;
-      padding: 5px 9px;
-      border-radius: 7px;
-      background: #202b46;
-      color: #d0d7f4;
-    }
-    .text-link { color: #b8aeff; font-weight: bold; margin-top: auto; }
-    .about-box, .contact-box {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      background: var(--panel);
-    }
-    .about-box p, .contact-box p { color: var(--muted); }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .skill { padding: 8px 13px; border: 1px solid var(--border); border-radius: 9px; }
-    footer {
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      padding: 25px 0;
-      text-align: center;
-      font-size: .88rem;
-    }
-    @media (max-width: 650px) {
-      .nav-inner { align-items: flex-start; padding: 16px 0; flex-direction: column; }
-      .nav-links { gap: 14px; }
-      .hero { padding: 65px 0; }
-      .grid { grid-template-columns: 1fr; }
-      section { padding: 45px 0; }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="container nav-inner">
-      <a class="logo" href="#home">Smitha<span>.</span></a>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Smitha Poojary, showcasing AI and Python projects.">
+    <title>Smitha Poojary | AI Portfolio</title>
 
-  <main>
-    <header class="hero container" id="home">
-      <div class="eyebrow">AI Projects · Python · Learning & Building</div>
-      <h1>Hello, I'm Smitha.<br><span>Aspiring AI Developer.</span></h1>
-      <p>
-        Welcome to my portfolio! I'm developing my skills in Python,
-        artificial intelligence, data classification, recommendation
-        systems, and computer vision. Explore the four projects I completed
-        during my DecodeLabs AI training.
-      </p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#projects">Explore my projects ↓</a>
-        <a class="btn" href="https://github.com/smithapoojary07"
-           target="_blank" rel="noopener noreferrer">My GitHub ↗</a>
-      </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1020;
+            color: #f1f5f9;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            background: #11182b;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #26334c;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .hero {
+            min-height: 390px;
+            padding: 85px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background:
+                radial-gradient(circle at 80% 20%, #1e3a5f 0, transparent 35%),
+                #0b1020;
+        }
+
+        .tag {
+            color: #93c5fd;
+            background: #172554;
+            border: 1px solid #1d4ed8;
+            padding: 6px 13px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 6vw, 55px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #64748b;
+            color: #f1f5f9;
+        }
+
+        .button-secondary:hover {
+            border-color: #60a5fa;
+            color: #93c5fd;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #94a3b8;
+        }
+
+        .about-card {
+            background: #11182b;
+            border: 1px solid #26334c;
+            border-radius: 14px;
+            padding: 25px;
+            color: #cbd5e1;
+            max-width: 900px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #172554;
+            color: #bfdbfe;
+            border: 1px solid #1e40af;
+            border-radius: 7px;
+            padding: 7px 12px;
+            font-size: 13px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            background: #11182b;
+            border: 1px solid #26334c;
+            border-radius: 14px;
+            padding: 24px;
+            transition: 0.25s;
+            min-height: 300px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .project-number {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #172554;
+            color: #93c5fd;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .project-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .project-card .skills {
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+
+        .project-card .skill {
+            font-size: 11px;
+            padding: 4px 8px;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .contact-card {
+            background: #11182b;
+            border: 1px solid #26334c;
+            border-radius: 14px;
+            padding: 25px;
+            max-width: 700px;
+        }
+
+        .contact-card p {
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer {
+            border-top: 1px solid #26334c;
+            text-align: center;
+            padding: 24px 8%;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            .hero {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="#home">Smitha Poojary</a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <section class="container" id="projects">
-      <div class="section-heading">
-        <div class="eyebrow">My work</div>
-        <h2>Featured Projects</h2>
-        <p>Four projects demonstrating my learning and practical skills.</p>
-      </div>
+    <main>
+        <section class="hero" id="home">
+            <div class="tag">AI & Python Project Portfolio</div>
 
-      <div class="grid">
-        <article class="card">
-          <div class="project-number">PROJECT 01</div>
-          <h3>🤖 Rule-Based AI Chatbot</h3>
-          <p>
-            A Python chatbot that responds to user messages using predefined
-            rules, conditional statements, and interactive conversation logic.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">If-else</span>
-            <span class="tag">Control Flow</span>
-          </div>
-          <a class="text-link" href="github.com/smithapoojary07/DecodeLabs-Project1-Rule-Based-Chatbot"
-             target="_blank" rel="noopener noreferrer">Find project on GitHub ↗</a>
-        </article>
+            <h1>Hello, I'm <span>Smitha Poojary</span></h1>
 
-        <article class="card">
-          <div class="project-number">PROJECT 02</div>
-          <h3>📊 Data Classification</h3>
-          <p>
-            A data classification project exploring a dataset and using
-            classification concepts to understand patterns and predict
-            target categories.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Classification</span>
-          </div>
-          <a class="text-link" href="github.com/smithapoojary07/AI-Project-2-Data-Classification"
-             target="_blank" rel="noopener noreferrer">Find project on GitHub ↗</a>
-        </article>
+            <p>
+                Welcome to my portfolio! I am an MCA student interested in
+                Artificial Intelligence, Python programming, machine learning,
+                and building practical software projects.
+            </p>
 
-        <article class="card">
-          <div class="project-number">PROJECT 03</div>
-          <h3>💡 Recommendation Logic</h3>
-          <p>
-            A Python recommendation system that matches user interests with
-            items and ranks suggestions according to matching scores.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Recommendation Logic</span>
-            <span class="tag">Ranking</span>
-          </div>
-          <a class="text-link" href="github.com/smithapoojary07/DecodeLabs-AI-Project-3-Recommendation-Logic"
-             target="_blank" rel="noopener noreferrer">Find project on GitHub ↗</a>
-        </article>
+            <div class="project-actions">
+                <a class="button button-primary" href="#projects">
+                    Explore My Projects
+                </a>
 
-        <article class="card">
-          <div class="project-number">PROJECT 04</div>
-          <h3>🔎 OCR Recognition Pipeline</h3>
-          <p>
-            An image-processing pipeline that prepares images for optical
-            character recognition and extracts text using OpenCV and Tesseract.
-          </p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">OpenCV</span>
-            <span class="tag">Tesseract OCR</span>
-          </div>
-          <a class="text-link"
-             href="https://github.com/smithapoojary07/DecodeLabs-OCR-Recognition-Pipeline"
-             target="_blank" rel="noopener noreferrer">View project on GitHub ↗</a>
-        </article>
-      </div>
-    </section>
+                <a class="button button-secondary"
+                   href="https://github.com/smithapoojary07"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit My GitHub
+                </a>
+            </div>
+        </section>
 
-    <section class="container" id="about">
-      <div class="section-heading">
-        <div class="eyebrow">A little about me</div>
-        <h2>Learning by building</h2>
-      </div>
-      <div class="about-box">
-        <p>
-          I'm Smitha Poojary, an MCA student building practical experience
-          through programming and AI projects. My DecodeLabs training helped
-          me explore chatbot logic, data classification, recommendation
-          systems, and OCR-based image processing.
-        </p>
-        <p>
-          I enjoy learning new technologies, solving problems, and improving
-          my projects through hands-on practice.
-        </p>
-        <div class="skills">
-          <span class="skill">Python</span>
-          <span class="skill">Artificial Intelligence</span>
-          <span class="skill">Pandas</span>
-          <span class="skill">OpenCV</span>
-          <span class="skill">Git & GitHub</span>
-          <span class="skill">Problem Solving</span>
-        </div>
-      </div>
-    </section>
+        <section id="about">
+            <div class="section-heading">
+                <h2>About Me</h2>
+                <p>A little about my learning journey</p>
+            </div>
 
-    <section class="container" id="contact">
-      <div class="section-heading">
-        <div class="eyebrow">Get in touch</div>
-        <h2>Let's connect</h2>
-      </div>
-      <div class="contact-box">
-        <p>
-          Thank you for visiting my portfolio. You can explore my code,
-          projects, and learning journey through GitHub.
-        </p>
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="https://github.com/smithapoojary07"
-             target="_blank" rel="noopener noreferrer">Visit my GitHub ↗</a>
-          <!-- Add your professional email or LinkedIn URL here when ready. -->
-        </div>
-      </div>
-    </section>
-  </main>
+            <div class="about-card">
+                <p>
+                    I am pursuing my Master of Computer Applications (MCA)
+                    and developing my skills through hands-on projects.
+                    My project work includes rule-based chatbots, data
+                    classification, recommendation systems, and OCR-based
+                    text recognition. I enjoy learning new technologies
+                    and applying them to solve practical problems.
+                </p>
+            </div>
+        </section>
 
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Smitha Poojary · Built with HTML and CSS
-    </div>
-  </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+        <section id="projects">
+            <div class="section-heading">
+                <h2>My Projects</h2>
+                <p>Explore each project and open its own GitHub repository.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <article class="project-card">
+                    <div class="project-number">01</div>
+
+                    <h3>Rule-Based AI Chatbot</h3>
+
+                    <p>
+                        A Python chatbot that uses predefined rules,
+                        if-else statements, and decision-making logic
+                        to respond to user messages.
+                    </p>
+
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">If-Else</span>
+                        <span class="skill">AI Basics</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a class="button button-primary"
+                           href="https://github.com/smithapoojary07/DecodeLabs-Project1-Rule-Based-Chatbot"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PROJECT 2 -->
+                <article class="project-card">
+                    <div class="project-number">02</div>
+
+                    <h3>Data Classification</h3>
+
+                    <p>
+                        A machine learning project that explores a dataset
+                        and classifies data using a supervised learning
+                        approach.
+                    </p>
+
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">Machine Learning</span>
+                        <span class="skill">Classification</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a class="button button-primary"
+                           href="https://github.com/smithapoojary07/AI-Project-2-Data-Classification"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PROJECT 3 -->
+                <article class="project-card">
+                    <div class="project-number">03</div>
+
+                    <h3>AI Recommendation Logic</h3>
+
+                    <p>
+                        A recommendation system that matches user interests
+                        with available items and ranks suggestions using
+                        simple scoring logic.
+                    </p>
+
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">Recommendation</span>
+                        <span class="skill">Scoring Logic</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a class="button button-primary"
+                           href="https://github.com/smithapoojary07/DecodeLabs-AI-Project-3-Recommendation-Logic"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PROJECT 4 -->
+                <article class="project-card">
+                    <div class="project-number">04</div>
+
+                    <h3>OCR Recognition Pipeline</h3>
+
+                    <p>
+                        An image-processing pipeline that prepares images
+                        for text recognition and extracts text using OCR
+                        tools, with confidence-based processing.
+                    </p>
+
+                    <div class="skills">
+                        <span class="skill">Python</span>
+                        <span class="skill">OpenCV</span>
+                        <span class="skill">Tesseract OCR</span>
+                    </div>
+
+                    <div class="project-actions">
+                        <a class="button button-primary"
+                           href="https://github.com/smithapoojary07/DecodeLabs-OCR-Recognition-Pipeline"
+                           target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-heading">
+                <h2>Skills & Technologies</h2>
+                <p>Technologies I have explored through learning and projects.</p>
+            </div>
+
+            <div class="about-card">
+                <div class="skills">
+                    <span class="skill">Python</span>
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">Machine Learning</span>
+                    <span class="skill">Artificial Intelligence</span>
+                    <span class="skill">Pandas</span>
+                    <span class="skill">NumPy</span>
+                    <span class="skill">OpenCV</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">GitHub</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-heading">
+                <h2>Contact & Profiles</h2>
+                <p>Connect with me and explore my work.</p>
+            </div>
+
+            <div class="contact-card">
+                <p>
+                    Visit my GitHub profile to see my repositories,
+                    project source code, and future work.
+                </p>
+
+                <div class="contact-links">
+                    <a class="button button-primary"
+                       href="https://github.com/smithapoojary07"
+                       target="_blank" rel="noopener noreferrer">
+                        GitHub Profile
+                    </a>
+
+                    <a class="button button-secondary"
+                       href="https://github.com/smithapoojary07/smithapoojary07.github.io"
+                       target="_blank" rel="noopener noreferrer">
+                        Portfolio Source Code
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Smitha Poojary | AI & Python Portfolio</p>
+    </footer>
+
 </body>
 </html>
+```
